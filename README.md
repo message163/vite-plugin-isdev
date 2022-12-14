@@ -19,6 +19,7 @@ plugins: [comments({
 ```
 条件注释语法
 template 中使用  `<!--#if-dev-->  <!--#end-dev-->`
+
 script ts tsx css 使用 `//#if-dev //#if-dev`
 
 ### 案例如下
