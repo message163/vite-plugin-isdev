@@ -3,7 +3,6 @@ import typescript from '@rollup/plugin-typescript';
 import { terser } from 'rollup-plugin-terser';
 import babel from '@rollup/plugin-babel';
 import dts from 'rollup-plugin-dts';
-console.log(dts)
 import rollup from 'rollup';
 export default rollup.defineConfig([
     {
