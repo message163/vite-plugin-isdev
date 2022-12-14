@@ -23,7 +23,7 @@ plugins: [comments({
 条件注释语法
 template 中使用  `<!--#if-dev-->  <!--#end-dev-->`
 
-script ts tsx css 使用 `//#if-dev //#if-dev`
+script ts tsx css 使用 `//#if-dev //#end-dev`
 
 ### 案例如下
 ```vue
@@ -76,10 +76,10 @@ div{
 <template>
     <div>
         <div>扰乱</div>
-        
+
     </div>
     <h2>
-        
+
     </h2>
    <xxxx></xxxx>
 </template>
