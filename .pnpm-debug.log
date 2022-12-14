@@ -1,0 +1,78 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 debug pnpm:package-manifest": {
+    "initial": {
+      "name": "@vitejs/plugin-vue",
+      "version": "3.2.0",
+      "license": "MIT",
+      "author": "Evan You",
+      "files": [
+        "dist"
+      ],
+      "main": "./dist/index.cjs",
+      "module": "./dist/index.mjs",
+      "types": "./dist/index.d.ts",
+      "exports": {
+        ".": {
+          "types": "./dist/index.d.ts",
+          "import": "./dist/index.mjs",
+          "require": "./dist/index.cjs"
+        }
+      },
+      "scripts": {
+        "dev": "unbuild --stub",
+        "build": "unbuild && pnpm run patch-cjs",
+        "patch-cjs": "tsx ../../scripts/patchCJS.ts",
+        "prepublishOnly": "npm run build"
+      },
+      "engines": {
+        "node": "^14.18.0 || >=16.0.0"
+      },
+      "repository": {
+        "type": "git",
+        "url": "git+https://github.com/vitejs/vite.git",
+        "directory": "packages/plugin-vue"
+      },
+      "bugs": {
+        "url": "https://github.com/vitejs/vite/issues"
+      },
+      "homepage": "https://github.com/vitejs/vite/tree/main/packages/plugin-vue#readme",
+      "peerDependencies": {
+        "vite": "^3.0.0",
+        "vue": "^3.2.25"
+      },
+      "devDependencies": {
+        "@jridgewell/gen-mapping": "^0.3.2",
+        "@jridgewell/trace-mapping": "^0.3.17",
+        "debug": "^4.3.4",
+        "rollup": "^2.79.1",
+        "slash": "^5.0.0",
+        "source-map": "^0.6.1",
+        "vite": "workspace:*",
+        "vue": "^3.2.41"
+      }
+    },
+    "prefix": "/Users/ext.liuyuanhao3/Desktop/vite-plugin-isdev"
+  },
+  "2 debug pnpm:context": {
+    "currentLockfileExists": false,
+    "storeDir": "/Users/ext.liuyuanhao3/Library/pnpm/store/v3",
+    "virtualStoreDir": "/Users/ext.liuyuanhao3/Desktop/vite-plugin-isdev/node_modules/.pnpm"
+  },
+  "3 debug pnpm:stage": {
+    "prefix": "/Users/ext.liuyuanhao3/Desktop/vite-plugin-isdev",
+    "stage": "resolution_started"
+  },
+  "4 error pnpm": {
+    "code": "ERR_PNPM_NO_MATCHING_VERSION_INSIDE_WORKSPACE",
+    "pkgsStack": [],
+    "err": {
+      "name": "pnpm",
+      "message": "In : No matching version found for vite@* inside the workspace",
+      "code": "ERR_PNPM_NO_MATCHING_VERSION_INSIDE_WORKSPACE",
+      "stack": "pnpm: In : No matching version found for vite@* inside the workspace\n    at tryResolveFromWorkspace (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:85745:15)\n    at resolveNpm (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:85637:39)\n    at Object.resolve (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:85867:34)\n    at ctx.requestsQueue.add.priority (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:93031:75)\n    at run (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:92792:90)\n    at PQueue._tryToStartAnother (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:92746:13)\n    at /Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:92805:16\n    at new Promise (<anonymous>)\n    at PQueue.add (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:92787:16)\n    at resolveAndFetch (/Users/ext.liuyuanhao3/.nvm/versions/node/v14.18.2/pnpm-global/5/node_modules/.pnpm/pnpm@7.3.0/node_modules/pnpm/dist/pnpm.cjs:93031:55)"
+    }
+  }
+}

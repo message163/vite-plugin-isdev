@@ -1,0 +1,41 @@
+{
+  "name": "vite-plugin-isdev",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Xiao Man",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "engines": {
+    "node": "^14.18.0 || >=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/message163/vite-plugin-isdev.git"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@babel/core": "^7.20.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-typescript": "^9.0.2",
+    "@vue/compiler-sfc": "^3.2.45",
+    "rollup": "^3.7.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.1"
+  }
+}
