@@ -15,6 +15,7 @@ export interface Options{
 ```
 vite.config.ts
 ```ts
+import comments from 'vite-plugin-isdev'
 plugins: [comments({
     prefix:"xm", //自定义前缀 默认dev
     debugger:false//是否开启调试模式
@@ -23,7 +24,7 @@ plugins: [comments({
 条件注释语法
 template 中使用  `<!--#if-dev-->  <!--#end-dev-->`
 
-script ts tsx css 使用 `//#if-dev //#if-dev`
+script ts tsx css 使用 `//#if-dev //#end-dev`
 
 ### 案例如下
 ```vue
