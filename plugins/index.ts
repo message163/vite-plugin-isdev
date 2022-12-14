@@ -40,6 +40,7 @@ export default function comments(options: Options = { prefix: "dev", debugger: f
         style.forEach(style => {
             str += `<style ${style?.scoped ? 'scoped' : ''} ${style?.lang ? 'lang=' + `'${style.lang}'` : ''}>${style.content}</style>\n`
         })
+        console.log(str)
         return str;
     }
 
@@ -57,14 +58,20 @@ export default function comments(options: Options = { prefix: "dev", debugger: f
         transform(code, id) {
             if (/.vue$/.test(id)) {
                 const { descriptor } = parse(code)
-                const temp = descriptor.template.content
-                const script = descriptor.scriptSetup;
-                const styles = descriptor.styles
-                const tempCode = replaceTemplate(temp)
-                const scriptCode = replaceScript(script)
-                const styleCode = replaceStyle(styles)
-                const template = AssemblyCode(tempCode, scriptCode, styleCode)
-                return nodeEnv.mode == 'development' ? code :  template
+                const temp = descriptor.template?.content
+                const script = descriptor?.scriptSetup;
+                const styles = descriptor?.styles
+               
+                if(temp && script && styles){
+                    const tempCode = replaceTemplate(temp)
+                    const scriptCode = replaceScript(script)
+                    const styleCode = replaceStyle(styles)
+                    const template = AssemblyCode(tempCode, scriptCode, styleCode)
+                    return nodeEnv.mode == 'development' ? code :  template
+                }else{
+                    return code
+                }
+               
             }
 
             if (/.ts$/.test(id)) {
