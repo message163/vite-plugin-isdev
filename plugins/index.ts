@@ -58,7 +58,7 @@ export default function comments(options: Options = { prefix: "dev", debugger: f
         transform(code, id) {
             if (/.vue$/.test(id)) {
                 const { descriptor } = parse(code)
-                const temp = descriptor.template?.content
+                const temp = descriptor?.template?.content
                 const script = descriptor?.scriptSetup;
                 const styles = descriptor?.styles
                
@@ -76,7 +76,14 @@ export default function comments(options: Options = { prefix: "dev", debugger: f
 
             if (/.ts$/.test(id)) {
                 return nodeEnv.mode == 'development' ? code : replaceTsOrTsx(code)
+            }  
+            if (/.js$/.test(id)) {
+                return nodeEnv.mode == 'development' ? code : replaceTsOrTsx(code)
             }
+            if (/.jsx$/.test(id)) {
+                return nodeEnv.mode == 'development' ? code : replaceTsOrTsx(code)
+            }
+
 
             if(/.tsx$/.test(id)){
                return nodeEnv.mode == 'development' ? code : replaceTsOrTsx(code)
